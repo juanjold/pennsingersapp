@@ -1,0 +1,37 @@
+<%= form_for(@techy) do |f| %>
+  <% if @techy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@techy.errors.count, "error") %> prohibited this techy from being saved:</h2>
+
+      <ul>
+      <% @techy.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Name" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label "Lastname" %><br />
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label "Position" %><br />
+    <%= f.text_field :position %>
+  </div>
+  <div class="field">
+    <%= f.label "Skill" %><br />
+    <%= f.text_field :skill %>
+  </div>
+  <div class="field">
+    <%= f.label "Biography" %><br />
+    <%= f.text_area :bio %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

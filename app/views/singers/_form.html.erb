@@ -1,0 +1,38 @@
+<%= form_for(@singer) do |f| %>
+  <% if @singer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@singer.errors.count, "error") %> prohibited this singer from being saved:</h2>
+
+      <ul>
+      <% @singer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Name" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label "Lastname" %><br />
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label "Voice Part" %><br />
+    <%= f.collection_select :voicepart, SingersController::VOICEPARTS, :to_s, :to_s, 
+       :include_blank => false %>
+  </div>
+  <div class="field">
+    <%= f.label "Skill" %><br />
+    <%= f.text_field :skill %>
+  </div>
+  <div class="field">
+    <%= f.label "Biography" %><br />
+    <%= f.text_area :bio %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

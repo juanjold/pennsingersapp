@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @techy.name %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%= @techy.lastname %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @techy.position %>
+</p>
+
+<p>
+  <b>Skill:</b>
+  <%= @techy.skill %>
+</p>
+
+<p>
+  <b>Bio:</b>
+  <%= @techy.bio %>
+</p>
+
+
+<%= link_to 'Edit', edit_techy_path(@techy) %> |
+<%= link_to 'Back', techies_path %>

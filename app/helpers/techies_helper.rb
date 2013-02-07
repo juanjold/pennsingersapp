@@ -1,0 +1,2 @@
+module TechiesHelper
+end
